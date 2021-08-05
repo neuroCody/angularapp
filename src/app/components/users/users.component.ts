@@ -55,18 +55,6 @@ export class UsersComponent implements OnInit {
 
   }
 
-  // addUser() {
-  //   this.user.isActive = true
-  //   this.user.registered = new Date()
-  //   this.users.unshift(this.user);
-
-  //   this.user = {
-  //     firstName: '',
-  //     lastName: '',
-  //     email: '',
-  //   }
-  // }
-
   onSubmit({value, valid}: {value: User, valid: boolean}) {
     if(!valid){
       console.log("Form is not valid")
