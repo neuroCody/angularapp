@@ -9,12 +9,7 @@ export class UsersComponent implements OnInit {
   user: User = {
     firstName: '',
     lastName: '',
-    age: 0,
-    address: {
-      street: '',
-      city: '',
-      state: '',
-    }
+    email: '',
   }
   users: User[]
   showExtended: boolean = true
@@ -30,12 +25,7 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'John',
           lastName: 'Doe',
-          age: 70,
-          address: {
-              street: '50 Main St',
-              city: 'Boston',
-              state: 'MA',
-          },
+          email: 'john@gmail.com',
           isActive: true,
           registered: new Date('08/05/2021 08:30:00'),
           hide: true
@@ -43,12 +33,7 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'Kevin',
           lastName: 'Johnson',
-          age: 34,
-          address: {
-              street: '20 School St',
-              city: 'Lynn',
-              state: 'MA',
-          },
+          email: 'kevin@gmail.com',
           isActive: false,
           registered: new Date('07/31/2019 11:30:00'),
           hide: true
@@ -56,12 +41,7 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'Karen',
           lastName: 'Williams',
-          age: 26,
-          address: {
-              street: '55 Mill St',
-              city: 'Miami',
-              state: 'FL',
-          },
+          email: 'karen@gmail.com',
           isActive: true,
           registered: new Date('03/27/2020 06:45:00'),
           hide: true
@@ -74,25 +54,16 @@ export class UsersComponent implements OnInit {
 
   }
 
-  addUser() {
-    this.user.isActive = true
-    this.user.registered = new Date()
-    this.users.unshift(this.user);
+  // addUser() {
+  //   this.user.isActive = true
+  //   this.user.registered = new Date()
+  //   this.users.unshift(this.user);
 
-    this.user = {
-      firstName: '',
-      lastName: '',
-      age: null,
-      address: {
-        street: '',
-        city: '',
-        state: '',
-      }
-    }
-  }
-
-  // toggleHide(user: User) {
-  //   user.hide = !user.hide
+  //   this.user = {
+  //     firstName: '',
+  //     lastName: '',
+  //     email: '',
+  //   }
   // }
 
   onSubmit(e: any): any {
@@ -100,8 +71,4 @@ export class UsersComponent implements OnInit {
     console.log(123)
   }
 
-  fireEvent(e: any): any {
-    console.log(e.target.value)
-  }
- 
 }
