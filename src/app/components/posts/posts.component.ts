@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service'
 import { Post } from '../../models/Post'
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-posts',
@@ -31,6 +32,21 @@ export class PostsComponent implements OnInit {
   editPost(post: Post) {
     this.currentPost = post
     this.isEdit = true
+  }
+
+  onUpdatedPost(post: Post) {
+    this.posts.forEach((cur, index) => {
+      if(post.id === cur.id) {
+        this.posts.splice(index, 1)
+        this.posts.unshift(post)
+        this.isEdit = false
+        this.currentPost = {
+          id: 0,
+          title: '',
+          body: '',
+        }
+      }
+    })
   }
  
 }
